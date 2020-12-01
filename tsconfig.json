@@ -1,0 +1,64 @@
+{
+    "include": 
+    [
+        "./src/globals.d.ts",
+        "./src",
+        "./test"
+    ],
+    "exclude": 
+    [
+        "./node_modules"
+    ],
+
+    "compilerOptions": 
+    {
+        "esModuleInterop": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "lib": 
+        [
+            "ES2019",
+        ],
+        "module": "CommonJS",
+        "target": "ES2019",
+
+        "typeRoots":
+        [
+            "./@types",
+            "./node_modules/@types",
+        ],
+
+        "types": 
+        [
+            "node"
+        ]
+    },
+
+    "ts-node":
+    {
+        "files":        true,
+        "pretty":       true,
+        "emit":         false,
+        "ignoreDiagnostics":
+        [
+
+        ],
+        "preferTsExts": true,
+        "compilerOptions":
+        {
+            /**
+             * NOTE: For global definitions declarations must be placed inside one of the defined
+             *       typeRoots, e.g.
+             *        <typeRoot>/
+             *            <module-name>/
+             *                index.d.ts
+             */
+            "typeRoots":
+            [
+                "./@types",
+                "./node_modules/@types",
+            ],
+            "skipLibCheck": true,
+        }
+    }
+}
